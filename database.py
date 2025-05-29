@@ -8,5 +8,5 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 
 def init_db():
-    from models import Category, Book  # Ensure models are imported for table creation
+    from models import Category, Book  
     Base.metadata.create_all(engine)

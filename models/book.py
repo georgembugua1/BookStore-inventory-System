@@ -29,7 +29,7 @@ class Book(Base):
     def create(cls, title, quantity, category_id):
         session = Session()
         try:
-            # Validate category exists
+           
             if not session.get(Category, category_id):
                 raise ValueError(f"Category with ID {category_id} does not exist.")
             book = cls(title=title, quantity=quantity, category_id=category_id)
@@ -75,7 +75,7 @@ class Book(Base):
 
     @classmethod
     def filter_by_category(cls, books, category_id):
-        # In-place filtering: keep at most two books with the specified category_id
+       
         count = 0
         insert_pos = 0
         for i in range(len(books)):
